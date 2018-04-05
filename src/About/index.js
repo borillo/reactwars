@@ -8,7 +8,4 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({});
   
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(AboutPanel);
+export default connect(mapStateToProps, mapDispatchToProps)(AboutPanel);
