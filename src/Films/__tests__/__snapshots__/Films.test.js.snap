@@ -1,14 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Films should match snapshot 1`] = `
-<FilmsPanel>
-  <div>
-    <h1>
-      Film list
-    </h1>
-    <div
-      className="films"
-    />
-  </div>
-</FilmsPanel>
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <Connect(FilmsPanel)>
+    <FilmsPanel
+      films={Array []}
+      loadFilms={[Function]}
+    >
+      <div
+        className="panel-films"
+      >
+        <h1>
+          Film list
+        </h1>
+        <Films
+          films={Array []}
+        >
+          <div
+            className="films"
+          />
+        </Films>
+      </div>
+    </FilmsPanel>
+  </Connect(FilmsPanel)>
+</Provider>
 `;
