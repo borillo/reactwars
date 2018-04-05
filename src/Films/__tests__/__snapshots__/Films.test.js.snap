@@ -3,16 +3,12 @@
 exports[`Films should match snapshot 1`] = `
 <FilmsPanel>
   <div>
-    <h3>
+    <h1>
       Film list
-    </h3>
-    <ListGroup
-      bsClass="list-group"
-    >
-      <ul
-        className="list-group"
-      />
-    </ListGroup>
+    </h1>
+    <div
+      className="films"
+    />
   </div>
 </FilmsPanel>
 `;

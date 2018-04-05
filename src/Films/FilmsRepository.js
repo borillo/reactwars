@@ -18,7 +18,11 @@ export default {
       let data = await response.json();
       
       let sortedFilms = sortFilmsByEpisodeNumber(data);
-      resolve(Object.assign(data, {results: sortedFilms}));
+      
+      resolve({ 
+        ...data,
+        results: sortedFilms 
+      });
     });
   }
 }

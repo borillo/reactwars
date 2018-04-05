@@ -1,49 +1,38 @@
 import React, { Component } from 'react';
 
-import { 
-  ListGroup,
-  ListGroupItem
-} from 'react-bootstrap';
-
 import repository from './FilmsRepository';
 
 export default class FilmsPanel extends Component {
-  constructor(props) {
-    super(props);
+  state = {
+    films: [],
+  };
 
-    this.state = {
-      films: []
-    }
-  }
-
-  componentWillMount() {
+  componentDidMount() {
     repository.retrieveFilms()
-      .then((response) => {
-        this.setState({
-          films: response.results
-        });
+      .then(({ results:films }) => {
+        this.setState({ films });
       });
   }
 
   render() {
     return (
       <div>
-        <h3>Film list</h3>
+        <h1>Film list</h1>
 
-        <ListGroup>    
+        <div className="films">
           {
             this.state.films.map((film) => {
               return (
-                <ListGroupItem key={film.episode_id}>
+                <div key={film.episode_id}>
                   <div className="film">
                     <div className="title"><strong>{film.title}</strong></div>
                     <div className="episode">Episode {film.episode_id}</div>
                   </div>
-                </ListGroupItem>
+                </div>
               );
             })
           }
-        </ListGroup>
+        </div>
       </div>
     );
   }
