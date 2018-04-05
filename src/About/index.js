@@ -1,37 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import repository from './AboutRepository';
+const AboutPanel = () => {
+  const teachers = [ 'Óscar Belmonte', 'Reyes Grangel', 'Ricardo Borillo' ];
+  
+  return (
+    <div className="panel-about">
+      <h1>This is ReactWars app!!</h1>
+      <p>A hello world application build on top of React v16. Meet the team:</p>
 
-export default class AboutPanel extends Component {
-  state = {
-    teachers: [],
-  };
+      <ul className="teachers">
+        {
+          teachers.map((teacher) => {
+            return (
+              <li key={teacher} className="teacher">{teacher}</li>
+            );
+          })
+        }
+      </ul>
 
-  componentDidMount() {
-    repository.retrieveAbout()
-      .then(({ teachers }) => {
-        this.setState({ teachers });
-      });
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>This is ReactWars app!!</h1>
-        <p>A hello world application build on top of React v16. Meet the team:</p>
-
-        <ul className="teachers">
-          {
-            this.state.teachers.map((teacher) => {
-              return (
-                <li key={teacher} className="teacher">{teacher}</li>
-              );
-            })
-          }
-        </ul>
-
-        <button>Feel the force!!</button>
-      </div>
-    );
-  }
+      <button>Feel the force!!</button>
+    </div>
+  );
 }
+
+export default AboutPanel;

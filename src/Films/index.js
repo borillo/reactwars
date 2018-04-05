@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import { loadFilmsAction } from './actions/creators';
@@ -7,13 +7,13 @@ const Films = ({ films }) => {
   return (
     <div className="films">
       {
-        (films || []).map((film) => 
+        films.map((film) => (
           <Film
             key={film.episode_id}
             title={film.title}
             episode={film.episode_id}
           />
-        )
+        ))
       }
     </div>
   )
@@ -37,19 +37,15 @@ class FilmsPanel extends Component {
     const { films } = this.props;
 
     return (
-      <Fragment>
+      <div className="panel-films">
         <h1>Film list</h1>
         <Films films={films} />
-      </Fragment>
+      </div>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    films: state.films,
-  }
-}
+const mapStateToProps = (state) => ({ films: state.films });
 
 const mapDispatchToProps = (dispatch) => {
   return {
@@ -60,6 +56,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-  mapStateToProps, 
+  mapStateToProps,
   mapDispatchToProps
 )(FilmsPanel);
