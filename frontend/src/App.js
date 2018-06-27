@@ -1,8 +1,8 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Films from './Films';
-import About from './About';
+import Films from "./Films";
+import About from "./About";
 
 export default () => {
   return (
@@ -10,9 +10,13 @@ export default () => {
       <div className="App">
         <h1>ReactWars</h1>
 
-        <ul>
-          <li><a href="/films">Films</a></li>
-          <li><a href="/about">About</a></li>
+        <ul className="menu">
+          <li>
+            <a href="/films">Films</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
         </ul>
 
         <Switch>
