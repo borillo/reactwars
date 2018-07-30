@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.json({ strict: false }));
 
 app.get("/", (req, res) => {
-  res.send("Welcome to the Bia360 Analytics API!! ;)");
+  res.send("Welcome to the ReactWars API!! ;)");
 });
 
 app.get("/api/films", (req, res) => {
