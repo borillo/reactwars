@@ -8,6 +8,8 @@ const sortFilmsByEpisodeNumber = data => {
 
 export default {
   async retrieveFilms() {
-    return fetch("/api/films").then(response => response.json());
+    return fetch("/api/films")
+      .then(response => response.json())
+      .then(sortFilmsByEpisodeNumber);
   }
 };
