@@ -1,6 +1,11 @@
 jest.mock('../FilmsRepository');
 
 import React from 'react';
+import { Provider } from 'react-redux';
+
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+
 import { mount } from 'enzyme';
 
 import Films from '../index';
@@ -19,12 +24,21 @@ const FILM_TITLES = [
 const FILM_EPISODES = FILM_TITLES.map((title, index) => `Episode ${index+1}`);
 const NUMBER_OF_FILMS = FILM_TITLES.length;
 
+const configureStore = () => {
+  return createStore(
+    combineReducers({ 
+      films: require('../actions/reducers').default,
+    }),
+    applyMiddleware(thunkMiddleware),
+  )  
+}
+
 describe('Films', () => {
-  let wrapper;
-  let films;
+  let wrapper, films, store;
 
   beforeEach(async () => {
-    wrapper = mount(<Films />);
+    store = configureStore();
+    wrapper = mount(<Provider store={store}><Films /></Provider>);
     films = new FilmsPageObject(wrapper);
   });
 

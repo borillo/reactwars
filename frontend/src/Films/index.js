@@ -1,38 +1,17 @@
-import React, { Component } from "react";
+import { connect } from 'react-redux';
 
-import repository from "./FilmsRepository";
+import { loadFilmsAction } from './actions/creators';
 
-export default class FilmsPanel extends Component {
-  state = {
-    films: []
-  };
+import FilmsPanel from './FilmsPanel';
 
-  componentDidMount() {
-    repository.retrieveFilms().then(films => {
-      this.setState({ films });
-    });
-  }
+const mapStateToProps = (state) => ({ films: state.films });
 
-  render() {
-    return (
-      <div>
-        <h1 className="section-title">Film list</h1>
-
-        <div className="films">
-          {this.state.films.map(film => {
-            return (
-              <div key={film.episode}>
-                <div className="film">
-                  <div className="title">
-                    <strong>{film.title}</strong>
-                  </div>
-                  <div className="episode">Episode {film.episode}</div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    );
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadFilms: () => {
+      dispatch(loadFilmsAction())
+    },
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(FilmsPanel);
