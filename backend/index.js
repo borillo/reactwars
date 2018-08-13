@@ -26,4 +26,8 @@ app.get("/api/films", (req, res) => {
   ]);
 });
 
+app.get("/api/teachers", (req, res) => {
+  res.json(["Ricardo Borillo", "Jaime Perera"]);
+});
+
 app.listen(4000, () => console.log("Listening on port 4000!!"));
