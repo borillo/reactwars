@@ -1,11 +1,20 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import AboutPanel from './AboutPanel';
+import AboutPanel from "./components/AboutPanel";
 
-const mapStateToProps = (state) => ({ 
-  teachers: [ 'Óscar Belmonte', 'Reyes Grangel', 'Ricardo Borillo' ]
-});
+import { loadTeachersAction } from "./actions/creators";
 
-const mapDispatchToProps = (dispatch) => ({});
-  
-export default connect(mapStateToProps, mapDispatchToProps)(AboutPanel);
+const mapStateToProps = ({ about: data }) => ({ data });
+
+const mapDispatchToProps = dispatch => {
+  return {
+    loadTeachers: () => {
+      dispatch(loadTeachersAction());
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(AboutPanel);

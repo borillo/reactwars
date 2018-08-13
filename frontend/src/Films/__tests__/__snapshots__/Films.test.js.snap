@@ -1,37 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Films should match snapshot 1`] = `
-<Provider
-  store={
-    Object {
-      "dispatch": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-      Symbol(observable): [Function],
-    }
-  }
->
-  <Connect(FilmsPanel)>
-    <FilmsPanel
-      films={Array []}
-      loadFilms={[Function]}
+<div>
+  <div
+    class="films-panel"
+  >
+    <h1>
+      Film list
+    </h1>
+    <div
+      class="films"
+      data-testid="films"
     >
       <div
-        className="panel-films"
+        class="film"
       >
-        <h1>
-          Film list
-        </h1>
-        <Films
-          films={Array []}
+        <div
+          class="title"
         >
-          <div
-            className="films"
-          />
-        </Films>
+          <strong>
+            A
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          1
+        </div>
       </div>
-    </FilmsPanel>
-  </Connect(FilmsPanel)>
-</Provider>
+    </div>
+  </div>
+</div>
 `;

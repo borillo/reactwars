@@ -1,17 +1,20 @@
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 
-import { loadFilmsAction } from './actions/creators';
+import { loadFilmsAction } from "./actions/creators";
 
-import FilmsPanel from './FilmsPanel';
+import FilmsPanel from "./components/FilmsPanel";
 
-const mapStateToProps = (state) => ({ films: state.films });
+const mapStateToProps = ({ films: data }) => ({ data });
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     loadFilms: () => {
-      dispatch(loadFilmsAction())
-    },
-  }
-}
+      dispatch(loadFilmsAction());
+    }
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(FilmsPanel);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FilmsPanel);

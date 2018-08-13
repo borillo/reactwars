@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 
 import Films from "./Films";
 import About from "./About";
@@ -12,10 +12,10 @@ export default () => {
 
         <ul className="menu">
           <li>
-            <a href="/films">Films</a>
+            <Link to="/films">Films</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
         </ul>
 

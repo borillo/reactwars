@@ -1,2 +1,2 @@
-export const FILMS_LOAD_START = 'FILMS_LOAD_START';
-export const FILMS_LOAD_END = 'FILMS_LOAD_END';
+export const FILMS_LOAD_START = "FILMS_LOAD_START";
+export const FILMS_LOAD_END = "FILMS_LOAD_END";
