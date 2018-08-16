@@ -1,10 +1,4 @@
-jest.mock("../repositories/FilmsRepository", () => {
-  return {
-    retrieveFilms() {
-      return Promise.resolve([{ episode: 1, title: "A" }]);
-    }
-  };
-});
+jest.mock("../FilmsRepository");
 
 import React from "react";
 import { Provider } from "react-redux";
@@ -15,9 +9,12 @@ import thunkMiddleware from "redux-thunk";
 import { render } from "react-testing-library";
 
 import Films from "../index";
-import FilmsPageObject from "../pageobjects/FilmsPageObject";
-
+import FilmsPageObject from "../FilmsPageObject";
 import filmsReducers from "../actions/reducers";
+
+import db from "../../../../backend/database/db";
+const FILM_TITLES = db.titles;
+const NUMBER_OF_FILMS = db.numberOfFilms;
 
 const configureStore = () => {
   return createStore(
@@ -29,7 +26,7 @@ const configureStore = () => {
 };
 
 describe("Films", () => {
-  let pageObject;
+  let page;
 
   beforeEach(() => {
     const store = configureStore();
@@ -40,31 +37,28 @@ describe("Films", () => {
       </Provider>
     );
 
-    pageObject = new FilmsPageObject(componentDom);
+    page = new FilmsPageObject(componentDom);
   });
 
   test("should be listed", async () => {
-    let filmList = pageObject.obtainFilms();
+    let filmList = page.obtainFilms();
 
-    expect(filmList).toHaveLength(1);
+    expect(filmList).toHaveLength(NUMBER_OF_FILMS);
   });
 
-  /*it("should show name and episode number", async () => {
-    const filmsTitles = films.obtainFilmsTitles();
+  it("should show name for each shown episode", async () => {
+    const filmsTitles = page.obtainFilmsTitles();
     expect(filmsTitles).toEqual(FILM_TITLES);
-
-    const filmsEpisodes = films.obtainFilmsEpisodes();
-    expect(filmsEpisodes).toEqual(FILM_EPISODES);
   });
 
   it("should be ordered by episode number", async () => {
-    let episodes = films.obtainFilmsEpisodes();
+    let episodes = page.obtainFilmsEpisodes();
     episodes.forEach((episode, index) => {
       expect(episode).toEqual(`Episode ${index + 1}`);
     });
-  });*/
+  });
 
   it("should match snapshot", async () => {
-    expect(pageObject.retrieveDom()).toMatchSnapshot();
+    expect(page.retrieveDom()).toMatchSnapshot();
   });
 });

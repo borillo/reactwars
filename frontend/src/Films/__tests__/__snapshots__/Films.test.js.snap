@@ -19,7 +19,7 @@ exports[`Films should match snapshot 1`] = `
           class="title"
         >
           <strong>
-            A
+            The Phantom Menace
           </strong>
         </div>
         <div
@@ -27,6 +27,125 @@ exports[`Films should match snapshot 1`] = `
         >
           Episode 
           1
+        </div>
+      </div>
+      <div
+        class="film"
+      >
+        <div
+          class="title"
+        >
+          <strong>
+            Attack of the Clones
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          2
+        </div>
+      </div>
+      <div
+        class="film"
+      >
+        <div
+          class="title"
+        >
+          <strong>
+            Revenge of the Sith
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          3
+        </div>
+      </div>
+      <div
+        class="film"
+      >
+        <div
+          class="title"
+        >
+          <strong>
+            A New Hope
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          4
+        </div>
+      </div>
+      <div
+        class="film"
+      >
+        <div
+          class="title"
+        >
+          <strong>
+            The Empire Strikes Back
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          5
+        </div>
+      </div>
+      <div
+        class="film"
+      >
+        <div
+          class="title"
+        >
+          <strong>
+            Return of the Jedi
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          6
+        </div>
+      </div>
+      <div
+        class="film"
+      >
+        <div
+          class="title"
+        >
+          <strong>
+            The Force Awakens
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          7
+        </div>
+      </div>
+      <div
+        class="film"
+      >
+        <div
+          class="title"
+        >
+          <strong>
+            The Last Jedi
+          </strong>
+        </div>
+        <div
+          class="episode"
+        >
+          Episode 
+          8
         </div>
       </div>
     </div>

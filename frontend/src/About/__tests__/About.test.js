@@ -1,3 +1,5 @@
+jest.mock("../AboutRepository");
+
 import React from "react";
 import { Provider } from "react-redux";
 
@@ -7,17 +9,8 @@ import thunkMiddleware from "redux-thunk";
 import { render, wait } from "react-testing-library";
 
 import About from "../index";
-import AboutPageObject from "../pageobjects/AboutPageObject";
-
+import AboutPageObject from "../AboutPageObject";
 import aboutReducers from "../actions/reducers";
-
-jest.mock("../repositories/AboutRepository", () => {
-  return {
-    retrieveTeachers() {
-      return Promise.resolve(["Ricardo Borillo", "Jaime Perera"]);
-    }
-  };
-});
 
 const configureStore = () => {
   return createStore(
@@ -29,7 +22,7 @@ const configureStore = () => {
 };
 
 describe("About", () => {
-  let pageObject;
+  let page;
 
   beforeEach(() => {
     const store = configureStore();
@@ -40,14 +33,18 @@ describe("About", () => {
       </Provider>
     );
 
-    pageObject = new AboutPageObject(componentDom);
+    page = new AboutPageObject(componentDom);
   });
 
-  test("should present wellcome information", async () => {
-    await wait(() => expect(pageObject.obtainTitle()).toBeDefined());
+  test("should present wellcome information", () => {
+    const title = page.obtainTitle();
+
+    expect(title).toBeDefined();
   });
 
-  test("should show associated teachers", async () => {
-    await wait(() => expect(pageObject.obtainTeachers()).toHaveLength(2));
+  test("should show associated teachers", () => {
+    const teachers = page.obtainTeachers();
+
+    expect(teachers).toHaveLength(2);
   });
 });

@@ -7,22 +7,20 @@ export default class FilmsPageObject {
   retrieveDom() {
     return this.container;
   }
-  
+
   obtainFilms() {
     return this.getByTestId("films").children;
   }
 
   obtainFilmsTitles() {
-    return []; /*this.wrapper
-      .update()
-      .find(".film .title")
-      .map(film => film.text());*/
+    const nodeTitles = this.container.querySelectorAll(".title");
+
+    return [...nodeTitles].map(node => node.textContent);
   }
 
   obtainFilmsEpisodes() {
-    return []; /*this.wrapper
-      .update()
-      .find(".film .episode")
-      .map(film => film.text());*/
+    const nodeEpisodes = this.container.querySelectorAll(".episode");
+
+    return [...nodeEpisodes].map(node => node.textContent);
   }
 }

@@ -1,5 +1,5 @@
 import { TEACHERS_LOAD_START, TEACHERS_LOAD_END } from "./types";
-import repository from "../repositories/AboutRepository";
+import repository from "../AboutRepository";
 
 export const loadTeachersAction = () => {
   return async dispatch => {

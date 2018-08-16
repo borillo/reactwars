@@ -1,5 +1,7 @@
+import db from "../../../../backend/database/db";
+
 export default {
   retrieveFilms() {
-    return Promise.resolve([{ episode: 1, title: "A" }]);
+    return Promise.resolve(db.films);
   }
 };

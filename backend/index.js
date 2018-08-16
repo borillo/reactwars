@@ -1,6 +1,8 @@
 import express from "express";
 import bodyParser from "body-parser";
 
+import db from "./database/db";
+
 const app = express();
 
 app.use(bodyParser.json({ strict: false }));
@@ -10,20 +12,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/films", (req, res) => {
-  res.json([
-    {
-      title: "Uno",
-      episode: 1
-    },
-    {
-      title: "Dos",
-      episode: 2
-    },
-    {
-      title: "Tres",
-      episode: 3
-    }
-  ]);
+  res.json(db.films);
 });
 
 app.get("/api/teachers", (req, res) => {
