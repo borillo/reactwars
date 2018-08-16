@@ -28,7 +28,10 @@ class FilmsPageObject {
       .parentsUntil(".film")
       .parent()
       .find(".votes")
-      .invoke("text");
+      .invoke("text")
+      .then(text => {
+        return parseInt(text, 10);
+      });
   }
 
   voteFilm(filmName) {

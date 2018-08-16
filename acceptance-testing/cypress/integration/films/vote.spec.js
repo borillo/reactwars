@@ -13,17 +13,15 @@ context("Vote", () => {
 
     page
       .currentVotes("A New Hope")
-      .then(text => {
-        currentVotes = parseInt(text, 10);
+      .then(votes => {
+        currentVotes = votes;
 
         page.voteFilm("A New Hope");
 
         return page.currentVotes("A New Hope");
       })
-      .then(text => {
-        const newVotes = parseInt(text, 10);
-
-        expect(newVotes).to.eq(currentVotes + 1);
+      .then(votes => {
+        expect(votes).to.eq(currentVotes + 1);
       });
   });
 });
