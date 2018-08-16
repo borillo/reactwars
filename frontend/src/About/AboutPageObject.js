@@ -3,6 +3,10 @@ export default class AboutPageObject {
     this.getByTestId = getByTestId;
   }
 
+  retrieveDom() {
+    return this.container;
+  }
+
   obtainTitle() {
     return this.getByTestId("panel-about-title");
   }

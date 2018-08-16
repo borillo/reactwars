@@ -9,7 +9,8 @@ class FilmsPanel extends Component {
   };
 
   static propTypes = {
-    data: PropTypes.array.isRequired
+    data: PropTypes.array.isRequired,
+    voteEpisode: PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -22,7 +23,7 @@ class FilmsPanel extends Component {
     return (
       <div className="films-panel">
         <h1>Film list</h1>
-        <Films data={data} />
+        <Films data={data} voteEpisode={this.props.voteEpisode} />
       </div>
     );
   }

@@ -28,6 +28,19 @@ exports[`Films should match snapshot 1`] = `
           Episode 
           1
         </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
+        </div>
       </div>
       <div
         class="film"
@@ -44,6 +57,19 @@ exports[`Films should match snapshot 1`] = `
         >
           Episode 
           2
+        </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
         </div>
       </div>
       <div
@@ -62,6 +88,19 @@ exports[`Films should match snapshot 1`] = `
           Episode 
           3
         </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
+        </div>
       </div>
       <div
         class="film"
@@ -78,6 +117,19 @@ exports[`Films should match snapshot 1`] = `
         >
           Episode 
           4
+        </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
         </div>
       </div>
       <div
@@ -96,6 +148,19 @@ exports[`Films should match snapshot 1`] = `
           Episode 
           5
         </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
+        </div>
       </div>
       <div
         class="film"
@@ -112,6 +177,19 @@ exports[`Films should match snapshot 1`] = `
         >
           Episode 
           6
+        </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
         </div>
       </div>
       <div
@@ -130,6 +208,19 @@ exports[`Films should match snapshot 1`] = `
           Episode 
           7
         </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
+        </div>
       </div>
       <div
         class="film"
@@ -146,6 +237,19 @@ exports[`Films should match snapshot 1`] = `
         >
           Episode 
           8
+        </div>
+        <div>
+          <span
+            class="votes"
+          >
+            0
+          </span>
+          votes |
+          <button
+            class="vote"
+          >
+            Vote
+          </button>
         </div>
       </div>
     </div>

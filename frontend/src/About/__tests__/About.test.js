@@ -47,4 +47,8 @@ describe("About", () => {
 
     expect(teachers).toHaveLength(2);
   });
+
+  test("should match snapshot", async () => {
+    expect(page.retrieveDom()).toMatchSnapshot();
+  });
 });

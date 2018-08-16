@@ -1,4 +1,4 @@
-import { FILMS_LOAD_START, FILMS_LOAD_END } from "./types";
+import { FILMS_LOAD_START, FILMS_LOAD_END, VOTE_EPISODE } from "./types";
 import repository from "../FilmsRepository";
 
 export const loadFilmsAction = () => {
@@ -12,6 +12,15 @@ export const loadFilmsAction = () => {
     dispatch({
       type: FILMS_LOAD_END,
       payload: films
+    });
+  };
+};
+
+export const voteEpisodeAction = episode => {
+  return async dispatch => {
+    dispatch({
+      type: VOTE_EPISODE,
+      payload: episode
     });
   };
 };

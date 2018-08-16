@@ -1,11 +1,21 @@
-import { FILMS_LOAD_START, FILMS_LOAD_END } from "./types";
+import { FILMS_LOAD_START, FILMS_LOAD_END, VOTE_EPISODE } from "./types";
 
-export default (state = [], action) => {
+const defaultState = {
+  films: []
+};
+
+export default (state = defaultState, action) => {
   switch (action.type) {
     case FILMS_LOAD_START:
-      return [];
+      return { ...state, films: [] };
     case FILMS_LOAD_END:
-      return [...action.payload];
+      return { ...state, films: [...action.payload] };
+    case VOTE_EPISODE:
+      return {
+        ...state,
+        [`votes-${action.payload}`]:
+          parseInt(state[`votes-${action.payload}`] || 0, 10) + 1
+      };
     default:
       return state;
   }

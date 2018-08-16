@@ -46,19 +46,19 @@ describe("Films", () => {
     expect(filmList).toHaveLength(NUMBER_OF_FILMS);
   });
 
-  it("should show name for each shown episode", async () => {
+  test("should show name for each shown episode", async () => {
     const filmsTitles = page.obtainFilmsTitles();
     expect(filmsTitles).toEqual(FILM_TITLES);
   });
 
-  it("should be ordered by episode number", async () => {
+  test("should be ordered by episode number", async () => {
     let episodes = page.obtainFilmsEpisodes();
     episodes.forEach((episode, index) => {
       expect(episode).toEqual(`Episode ${index + 1}`);
     });
   });
 
-  it("should match snapshot", async () => {
+  test("should match snapshot", async () => {
     expect(page.retrieveDom()).toMatchSnapshot();
   });
 });
