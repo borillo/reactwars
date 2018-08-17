@@ -35,6 +35,7 @@ Film.propTypes = {
   episode: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   votes: PropTypes.number.isRequired,
+  poster: PropTypes.string.isRequired,
   voteEpisode: PropTypes.func.isRequired
 };
 

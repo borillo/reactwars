@@ -11,6 +11,7 @@ const Films = ({ data: films, voteEpisode }) => {
           key={film.episode}
           title={film.title}
           episode={film.episode}
+          poster={film.poster}
           votes={film.votes}
           voteEpisode={voteEpisode}
         />
