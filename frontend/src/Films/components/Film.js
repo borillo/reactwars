@@ -1,26 +1,38 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
+
+import "./Film.css";
+
 class Film extends Component {
   voteEpisode = () => {
     this.props.voteEpisode(this.props.episode);
   };
 
   render() {
-    const { episode, title, votes } = this.props;
+    const { episode, title, poster, votes } = this.props;
 
     return (
       <div className="film">
-        <div className="title">
-          <strong>{title}</strong>
+        <div className="poster">
+          <img alt="poster" src={poster} />
         </div>
-        <div className="episode">Episode {episode}</div>
-        <div>
-          <span className="votes">{votes}</span>
-          votes |
-          <button className="vote" onClick={this.voteEpisode}>
-            Vote
-          </button>
+
+        <div className="detail">
+          <div className="title">{title}</div>
+          <div className="episode">Episode {episode}</div>
+          <div>
+            <button
+              className="vote"
+              style={{ marginRight: "0.5rem" }}
+              onClick={this.voteEpisode}
+            >
+              <FontAwesomeIcon icon={faThumbsUp} />
+            </button>
+            <span className="votes">{votes}</span> votes
+          </div>
         </div>
       </div>
     );
