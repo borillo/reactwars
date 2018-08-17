@@ -1,0 +1,49 @@
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 2rem;
+}
+
+.app header {
+  grid-area: header;
+}
+
+.app header h1 {
+  font-family: "Star Jedi";
+  margin-bottom: 0.1rem;
+}
+
+.app header h2 {
+  font-size: 1.1rem;
+}
+
+.app aside {
+  grid-area: sidebar;
+}
+
+.app section {
+  grid-area: content;
+}
+
+.app {
+  max-width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 15rem auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar content";
+}
+
+.app-menu {
+  padding-left: 0.3rem;
+}
+
+.app-menu li {
+  list-style-type: none;
+  padding: 0.2rem;
+}
+
+.app-menu li a {
+  color: goldenrod;
+}

@@ -1,0 +1,34 @@
+.film {
+  display: flex;
+}
+
+.film .detail {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.film .detail .title {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.film .detail .episode {
+  font-size: 1.1rem;
+  flex-grow: 2;
+  margin-top: 0.5rem;
+}
+
+.film .detail .vote {
+  color: goldenrod;
+}
+
+.film .poster img {
+  width: 7rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.film .poster img:hover {
+  width: 7rem;
+  transform: scale(1.5);
+}
