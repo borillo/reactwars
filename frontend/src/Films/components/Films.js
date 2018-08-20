@@ -42,7 +42,7 @@ const Films = ({ data: films, voteEpisode, match, location }) => {
 
       <div className="films-film-detail">
         <Route component={ScrollToTop} />
-        <Route path={"/films/:episode"} component={FilmDetail} />
+        <Route path="/films/:episode" component={FilmDetail} />
       </div>
     </div>
   );

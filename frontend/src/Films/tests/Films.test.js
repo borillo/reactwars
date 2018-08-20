@@ -1,42 +1,14 @@
-jest.mock("../FilmsRepository");
-
-import React from "react";
-import { Provider } from "react-redux";
-
-import { createStore, combineReducers, applyMiddleware } from "redux";
-import thunkMiddleware from "redux-thunk";
-
-import { render } from "react-testing-library";
-
-import Films from "../index";
+import componentDom from "./dom/init";
 import FilmsPageObject from "../FilmsPageObject";
-import filmsReducers from "../actions/reducers";
 
 import db from "../../../../backend/database/db";
 const FILM_TITLES = db.titles;
 const NUMBER_OF_FILMS = db.numberOfFilms;
 
-const configureStore = () => {
-  return createStore(
-    combineReducers({
-      films: filmsReducers
-    }),
-    applyMiddleware(thunkMiddleware)
-  );
-};
-
 describe("Films", () => {
   let page;
 
   beforeEach(() => {
-    const store = configureStore();
-
-    const componentDom = render(
-      <Provider store={store}>
-        <Films />
-      </Provider>
-    );
-
     page = new FilmsPageObject(componentDom);
   });
 
@@ -48,11 +20,13 @@ describe("Films", () => {
 
   test("should show name for each shown episode", async () => {
     const filmsTitles = page.obtainFilmsTitles();
+
     expect(filmsTitles).toEqual(FILM_TITLES);
   });
 
   test("should be ordered by episode number", async () => {
     let episodes = page.obtainFilmsEpisodes();
+    
     episodes.forEach((episode, index) => {
       expect(episode).toEqual(`Episode ${index + 1}`);
     });

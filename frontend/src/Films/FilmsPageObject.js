@@ -1,7 +1,8 @@
 export default class FilmsPageObject {
-  constructor({ getByTestId, container }) {
+  constructor({ getByTestId, container, debug }) {
     this.getByTestId = getByTestId;
     this.container = container;
+    this.debug = debug;
   }
 
   retrieveDom() {
@@ -9,7 +10,7 @@ export default class FilmsPageObject {
   }
 
   obtainFilms() {
-    return this.getByTestId("films").children;
+    return this.getByTestId("films").querySelectorAll(".film");
   }
 
   obtainFilmsTitles() {

@@ -52,12 +52,6 @@ class Film extends Component {
   }
 }
 
-Film.defaultProps = {
-  film: {
-    votes: 0
-  }
-};
-
 Film.propTypes = {
   film: PropTypes.object.isRequired,
   voteEpisode: PropTypes.func.isRequired
