@@ -32,3 +32,8 @@
   width: 7rem;
   transform: scale(1.5);
 }
+
+.film .title a {
+  color: black;
+  text-decoration: none;
+}

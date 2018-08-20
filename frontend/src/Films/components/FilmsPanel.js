@@ -23,7 +23,11 @@ class FilmsPanel extends Component {
     return (
       <div className="films-panel">
         <h1>Film list</h1>
-        <Films data={data} voteEpisode={this.props.voteEpisode} />
+        <Films
+          {...this.props}
+          data={data}
+          voteEpisode={this.props.voteEpisode}
+        />
       </div>
     );
   }

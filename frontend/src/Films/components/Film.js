@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
@@ -8,11 +9,13 @@ import "./Film.css";
 
 class Film extends Component {
   voteEpisode = () => {
-    this.props.voteEpisode(this.props.episode);
+    this.props.voteEpisode(this.props.film.episode);
   };
 
   render() {
-    const { episode, title, poster, votes } = this.props;
+    const {
+      film: { episode, title, poster, votes, plot }
+    } = this.props;
 
     return (
       <div className="film">
@@ -21,7 +24,16 @@ class Film extends Component {
         </div>
 
         <div className="detail">
-          <div className="title">{title}</div>
+          <div className="title">
+            <Link
+              to={{
+                pathname: `/films/${episode}`,
+                state: { episode, plot, title }
+              }}
+            >
+              {title}
+            </Link>
+          </div>
           <div className="episode">Episode {episode}</div>
           <div>
             <button
@@ -40,14 +52,13 @@ class Film extends Component {
 }
 
 Film.defaultProps = {
-  votes: 0
+  film: {
+    votes: 0
+  }
 };
 
 Film.propTypes = {
-  episode: PropTypes.number.isRequired,
-  title: PropTypes.string.isRequired,
-  votes: PropTypes.number.isRequired,
-  poster: PropTypes.string.isRequired,
+  film: PropTypes.object.isRequired,
   voteEpisode: PropTypes.func.isRequired
 };
 

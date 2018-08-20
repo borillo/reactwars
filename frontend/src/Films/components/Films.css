@@ -1,0 +1,7 @@
+.films {
+  display: flex;
+}
+
+.films .films-list {
+  min-width: 27rem;
+}
