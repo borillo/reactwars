@@ -43,7 +43,8 @@ class Film extends Component {
             >
               <FontAwesomeIcon icon={faThumbsUp} />
             </button>
-            <span className="votes">{votes}</span> votes
+            <span className="votes">{votes}</span>{" "}
+            {votes ? "votes" : "vote for me!!!"}
           </div>
         </div>
       </div>
