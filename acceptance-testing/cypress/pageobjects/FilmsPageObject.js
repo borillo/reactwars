@@ -30,7 +30,8 @@ class FilmsPageObject {
       .find(".votes")
       .invoke("text")
       .then(text => {
-        return parseInt(text, 10);
+        let i = parseInt(text, 10);
+        return i ? i : 0;
       });
   }
 
