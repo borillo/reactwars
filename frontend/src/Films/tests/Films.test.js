@@ -1,3 +1,5 @@
+jest.mock("../FilmsRepository");
+
 import componentDom from "./dom/init";
 import FilmsPageObject from "../FilmsPageObject";
 
@@ -26,7 +28,7 @@ describe("Films", () => {
 
   test("should be ordered by episode number", async () => {
     let episodes = page.obtainFilmsEpisodes();
-    
+
     episodes.forEach((episode, index) => {
       expect(episode).toEqual(`Episode ${index + 1}`);
     });

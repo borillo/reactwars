@@ -1,3 +1,5 @@
+jest.mock("../AboutRepository");
+
 import componentDom from "./dom/init";
 import AboutPageObject from "../AboutPageObject";
 

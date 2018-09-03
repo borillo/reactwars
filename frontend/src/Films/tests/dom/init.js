@@ -1,5 +1,3 @@
-jest.mock("../../FilmsRepository");
-
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
 
