@@ -30,6 +30,7 @@ class FilmsPageObject {
       .find(".votes")
       .invoke("text")
       .then(text => {
+        if (!text) return 0;
         return parseInt(text, 10);
       });
   }
