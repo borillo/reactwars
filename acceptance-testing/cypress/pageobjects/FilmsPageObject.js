@@ -24,9 +24,7 @@ class FilmsPageObject {
 
   currentVotes(filmName) {
     return this.wrapper
-      .contains(filmName)
-      .parentsUntil(".film")
-      .parent()
+      .contains(".film", filmName)
       .find(".votes")
       .invoke("text")
       .then(text => {
