@@ -1,5 +1,8 @@
 export default {
-  retrieveFilms() {
-    return fetch("/api/films").then(response => response.json());
+  async retrieveFilms() {
+    const response = await fetch("/api/films");
+    const films = await response.json();
+
+    return films;
   }
 };

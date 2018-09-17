@@ -1,10 +1,8 @@
-import fetch from "isomorphic-fetch";
-
 export default {
   async retrieveTeachers() {
     let response = await fetch("/api/teachers");
-    let data = await response.json();
+    let teachers = await response.json();
 
-    return data;
+    return teachers;
   }
 };
