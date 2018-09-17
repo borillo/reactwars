@@ -30,11 +30,13 @@
   "proxy": "http://localhost:4000",
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.10",
+    "@storybook/addon-info": "^3.4.10",
     "@storybook/addon-links": "^3.4.10",
     "@storybook/addon-notes": "^3.4.10",
     "@storybook/addons": "^3.4.10",
     "@storybook/react": "^3.4.10",
     "babel-core": "^6.26.3",
+    "babel-plugin-react-docgen": "^2.0.0",
     "babel-runtime": "^6.26.0",
     "core-js": "^2.5.7",
     "fetch-mock": "^6.5.2",
