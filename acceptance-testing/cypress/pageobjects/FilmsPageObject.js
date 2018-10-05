@@ -10,6 +10,10 @@ class FilmsPageObject {
     this.wrapper.visit("/films");
   }
 
+  title() {
+    return this.wrapper.get(".films-panel h1");
+  }
+
   films() {
     return this.wrapper.get(".film");
   }
@@ -22,7 +26,7 @@ class FilmsPageObject {
     return this.wrapper.get(".film .episode");
   }
 
-  currentVotes(filmName) {
+  numVotes(filmName) {
     return this.wrapper
       .contains(".film", filmName)
       .find(".votes")

@@ -1,6 +1,6 @@
 import FilmsPageObject from "../../pageobjects/FilmsPageObject";
 
-context("Vote", () => {
+context.only("Vote", () => {
   let page;
 
   beforeEach(() => {
@@ -12,16 +12,16 @@ context("Vote", () => {
     let currentVotes;
 
     page
-      .currentVotes("A New Hope")
+      .numVotes("A New Hope")
       .then(votes => {
         currentVotes = votes;
 
         page.voteFilm("A New Hope");
 
-        return page.currentVotes("A New Hope");
+        return page.numVotes("A New Hope");
       })
       .then(votes => {
-        expect(votes).to.eq(currentVotes + 1);
+        cy.wrap(votes).should("eq", currentVotes + 1);
       });
   });
 });
