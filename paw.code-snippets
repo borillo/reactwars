@@ -1,0 +1,87 @@
+{
+  "paw:cypress:fetch": {
+    "prefix": "paw",
+    "body": [
+      "Cypress.on(\"window:before:load\", win => {",
+      "  win.fetch = null;",
+      "});"
+    ]
+  },
+  "paw:home:spec": {
+    "prefix": "paw",
+    "body": [
+      "describe(\"Home\", () => {",
+      "  beforeEach(() => {",
+      "    cy.visit(\"/\");",
+      "  });",
+      "});"
+    ]
+  },
+  "paw:home:wellcome": {
+    "prefix": "paw",
+    "body": [
+      "it(\"should show wellcome info\", () => {",
+      "  cy.get(\".wellcome-title\").should(\"have.text\", \"Wellcome to ReactWars!!\");",
+      "});"
+    ]
+  },
+  "paw:home:menu": {
+    "prefix": "paw",
+    "body": [
+      "it(\"should allow to visit application areas throught the menu\", () => {",
+      "  cy.get(\".menu\").contains(\"available actions\");",
+      "});"
+    ]
+  },
+  "paw:home:menu-films": {
+    "prefix": "paw",
+    "body": [
+      "it(\"should allow to explore StarWars films\", () => {",
+      "  cy.get(\".menu-films\").click();",
+      "  cy.url().should(\"include\", \"/films\");",
+      "});"
+    ]
+  },
+  "paw:films:spec": {
+    "prefix": "paw",
+    "body": [
+      "describe(\"Films List\", () => {",
+      "  beforeEach(() => {",
+      "    cy.visit(\"/films\");",
+      "  });",
+      "});"
+    ]
+  },
+  "paw:films:header-title": {
+    "prefix": "paw",
+    "body": [
+      "it(\"should show films list header title\", () => {",
+      "  cy.get(\".films-title\").should(\"have.text\", \"List of registered movies:\");",
+      "});"
+    ]
+  },
+  "paw:films:list": {
+    "prefix": "paw",
+    "body": [
+      "it(\"should show available films\", () => {",
+      "  cy.get(\".films-episodes\").should(\"have.length.greaterThan\", 0);",
+      "});"
+    ]
+  },
+  "paw:films:filmsrepository": {
+    "prefix": "paw",
+    "body": [
+      "export default {",
+      "  async retrieveFilms() {",
+      "    const response = await fetch(\"/api/films\");",
+      "    const { results } = await response.json();",
+      "    return results;",
+      "  }",
+      "}"
+    ]
+  },
+  "paw:films:proxy": {
+    "prefix": "paw",
+    "body": ["\"proxy\": \"https://swapi.co\""]
+  }
+}
