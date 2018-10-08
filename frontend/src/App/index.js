@@ -4,8 +4,8 @@ import { Switch, Route, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-import Films from "./Films";
-import About from "./About";
+import Films from "../Films";
+import About from "../About";
 
 import "./App.css";
 

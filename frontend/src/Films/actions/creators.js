@@ -1,5 +1,5 @@
 import { FILMS_LOAD_START, FILMS_LOAD_END, VOTE_EPISODE } from "./types";
-import repository from "../FilmsRepository";
+import repository from "../repositories/FilmsRepository";
 
 export const loadFilmsAction = () => {
   return async dispatch => {

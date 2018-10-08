@@ -8,8 +8,8 @@ import { composeWithDevTools } from "redux-devtools-extension";
 const loggerMiddleware = createLogger();
 
 const appReducers = combineReducers({
-  about: require("../About/actions/reducers").default,
-  films: require("../Films/actions/reducers").default
+  about: require("../../About/actions/reducers").default,
+  films: require("../../Films/actions/reducers").default
 });
 
 let middleWares = applyMiddleware(thunkMiddleware);

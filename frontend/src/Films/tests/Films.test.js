@@ -1,17 +1,21 @@
-jest.mock("../FilmsRepository");
+jest.mock("../repositories/FilmsRepository");
 
-import componentDom from "./dom/init";
-import FilmsPageObject from "../FilmsPageObject";
+import React from "react";
+import { render } from "react-testing-library";
 
-import db from "../../../../backend/database/db";
-const FILM_TITLES = db.titles;
-const NUMBER_OF_FILMS = db.numberOfFilms;
+import Films from "../index";
+import FilmsPageObject from "./pageobjects/FilmsPageObject";
+
+import { build } from "../../App/config";
+
+const NUMBER_OF_FILMS = 8;
 
 describe("Films", () => {
   let page;
 
   beforeEach(() => {
-    page = new FilmsPageObject(componentDom);
+    const about = render(build(<Films />));
+    page = new FilmsPageObject(about);
   });
 
   test("should be listed", async () => {
@@ -20,10 +24,10 @@ describe("Films", () => {
     expect(filmList).toHaveLength(NUMBER_OF_FILMS);
   });
 
-  test("should show name for each shown episode", async () => {
+  test("should show episode title", async () => {
     const filmsTitles = page.obtainFilmsTitles();
 
-    expect(filmsTitles).toEqual(FILM_TITLES);
+    expect(filmsTitles).toHaveLength(NUMBER_OF_FILMS);
   });
 
   test("should be ordered by episode number", async () => {

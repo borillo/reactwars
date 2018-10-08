@@ -1,12 +1,12 @@
-jest.mock("../AboutRepository");
+jest.mock("../repositories/AboutRepository");
 
 import React from "react";
 import { render } from "react-testing-library";
 
-import { build } from "../../config";
+import { build } from "../../App/config";
 
 import About from "../index";
-import AboutPageObject from "../AboutPageObject";
+import AboutPageObject from "./pageobjects/AboutPageObject";
 
 const NUMBER_OF_DIRECTORS = 5;
 

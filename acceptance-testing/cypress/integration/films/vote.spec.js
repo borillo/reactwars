@@ -1,6 +1,6 @@
 import FilmsPageObject from "../../pageobjects/FilmsPageObject";
 
-context.only("Vote", () => {
+context("Vote", () => {
   let page;
 
   beforeEach(() => {

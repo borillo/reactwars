@@ -1,5 +1,5 @@
 import { DIRECTORS_LOAD_START, DIRECTORS_LOAD_END } from "./types";
-import repository from "../AboutRepository";
+import repository from "../repositories/AboutRepository";
 
 export const loadDirectorsAction = () => {
   return async dispatch => {
