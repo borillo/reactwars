@@ -1,7 +1,7 @@
 jest.mock("../repositories/FilmsRepository");
 
 import React from "react";
-import { render } from "react-testing-library";
+import { render, cleanup } from "react-testing-library";
 
 import Films from "../index";
 import FilmsPageObject from "./pageobjects/FilmsPageObject";
@@ -9,6 +9,8 @@ import FilmsPageObject from "./pageobjects/FilmsPageObject";
 import { build } from "../../App/config";
 
 const NUMBER_OF_FILMS = 8;
+
+afterEach(cleanup);
 
 describe("Films", () => {
   let page;
@@ -31,11 +33,7 @@ describe("Films", () => {
   });
 
   test("should be ordered by episode number", () => {
-    let first = page.obtainFirstEpisode();
-    let last = page.obtainLastEpisode();
-
-    expect(first).toEqual("Episode 1");
-    expect(last).toEqual(`Episode ${NUMBER_OF_FILMS}`);
+    expect(page).toShowEpisodesInOrder();
   });
 
   test("should match snapshot", () => {
