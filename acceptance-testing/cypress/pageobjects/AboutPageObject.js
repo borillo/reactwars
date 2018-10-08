@@ -1,18 +1,11 @@
 class AboutPageObject {
   constructor(wrapper) {
     this.wrapper = wrapper;
-
-    this.wrapper.server();
-    this.wrapper.route("/api/directors", "fixture:directors");
   }
 
-  open() {
-    this.wrapper.visit("/about");
-  }
+  open() {}
 
-  directors() {
-    return this.wrapper.get(".director");
-  }
+  directors() {}
 }
 
 export default AboutPageObject;
