@@ -2,14 +2,14 @@ import { connect } from "react-redux";
 
 import AboutPanel from "./components/AboutPanel";
 
-import { loadTeachersAction } from "./actions/creators";
+import { loadDirectorsAction } from "./actions/creators";
 
 const mapStateToProps = ({ about: data }) => ({ data });
 
 const mapDispatchToProps = dispatch => {
   return {
-    loadTeachers: () => {
-      dispatch(loadTeachersAction());
+    loadDirectors: () => {
+      dispatch(loadDirectorsAction());
     }
   };
 };

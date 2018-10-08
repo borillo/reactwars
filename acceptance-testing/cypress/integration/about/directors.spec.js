@@ -1,6 +1,6 @@
 import AboutPageObject from "../../pageobjects/AboutPageObject";
 
-context("Teachers", () => {
+context("Directors", () => {
   let page;
 
   beforeEach(() => {
@@ -8,9 +8,9 @@ context("Teachers", () => {
     page.open();
   });
 
-  it("should be listed", () => {
-    const teachers = page.teachers();
-    
-    teachers.should("have.length", 2);
+  it("should show the director list", () => {
+    const directors = page.directors();
+
+    directors.should("have.length", 2);
   });
 });

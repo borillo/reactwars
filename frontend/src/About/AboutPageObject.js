@@ -3,15 +3,15 @@ export default class AboutPageObject {
     this.getByTestId = getByTestId;
   }
 
-  retrieveDom() {
-    return this.container;
-  }
-
   obtainTitle() {
     return this.getByTestId("panel-about-title");
   }
 
-  obtainTeachers() {
-    return this.getByTestId("teachers").children;
+  obtainDirectors() {
+    return this.getByTestId("directors").children;
+  }
+
+  retrieveContainer() {
+    return this.container;
   }
 }

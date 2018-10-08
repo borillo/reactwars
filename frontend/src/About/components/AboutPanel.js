@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import Teachers from "./Teachers";
+import Directors from "./Directors";
 
 class AboutPanel extends Component {
   static getDefaultProps = {
@@ -13,7 +13,7 @@ class AboutPanel extends Component {
   };
 
   componentDidMount() {
-    this.props.loadTeachers();
+    this.props.loadDirectors();
   }
 
   render() {
@@ -23,11 +23,11 @@ class AboutPanel extends Component {
       <div className="panel-about">
         <h1 data-testid="panel-about-title">This is ReactWars app!!</h1>
 
-        <p>
-          A hello world application build on top of React v16. Meet the team:
-        </p>
+        <p>A hello world application build on top of React v16.</p>
 
-        <Teachers data={data} />
+        <h3>Directors:</h3>
+
+        <Directors data={data} />
 
         <button>Feel the force!!</button>
       </div>

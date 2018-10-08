@@ -1,8 +1,8 @@
 export default {
-  async retrieveTeachers() {
-    let response = await fetch("/api/teachers");
-    let teachers = await response.json();
+  async retrieveDirectors() {
+    let response = await fetch("/api/directors");
+    let directors = await response.json();
 
-    return teachers;
+    return directors;
   }
 };

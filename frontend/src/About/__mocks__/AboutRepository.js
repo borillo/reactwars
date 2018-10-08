@@ -1,5 +1,11 @@
 export default {
-  async retrieveTeachers() {
-    return Promise.resolve(["Ricardo Borillo", "Jaime Perera"]);
+  async retrieveDirectors() {
+    return Promise.resolve([
+      "George Lucas",
+      "Irvin Kershner",
+      "Richard Marquand",
+      "J. J. Abrams",
+      "Rian Johnson"
+    ]);
   }
 };

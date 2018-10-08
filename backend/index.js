@@ -15,8 +15,8 @@ app.get("/api/films", (req, res) => {
   res.json(db.films);
 });
 
-app.get("/api/teachers", (req, res) => {
-  res.json(["Ricardo Borillo", "Jaime Perera"]);
+app.get("/api/directors", (req, res) => {
+  res.json(db.directors);
 });
 
 app.listen(4000, () => console.log("Listening on port 4000!!"));

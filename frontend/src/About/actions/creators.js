@@ -1,17 +1,17 @@
-import { TEACHERS_LOAD_START, TEACHERS_LOAD_END } from "./types";
+import { DIRECTORS_LOAD_START, DIRECTORS_LOAD_END } from "./types";
 import repository from "../AboutRepository";
 
-export const loadTeachersAction = () => {
+export const loadDirectorsAction = () => {
   return async dispatch => {
     dispatch({
-      type: TEACHERS_LOAD_START
+      type: DIRECTORS_LOAD_START
     });
 
-    const teachers = await repository.retrieveTeachers();
+    const directors = await repository.retrieveDirectors();
 
     dispatch({
-      type: TEACHERS_LOAD_END,
-      payload: teachers
+      type: DIRECTORS_LOAD_END,
+      payload: directors
     });
   };
 };

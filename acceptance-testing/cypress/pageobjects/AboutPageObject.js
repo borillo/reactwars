@@ -1,17 +1,17 @@
 class AboutPageObject {
   constructor(wrapper) {
     this.wrapper = wrapper;
+
+    this.wrapper.server();
+    this.wrapper.route("/api/directors", "fixture:directors");
   }
 
   open() {
-    this.wrapper.server();
-    this.wrapper.route("/api/teachers", "fixture:teachers");
-
     this.wrapper.visit("/about");
   }
 
-  teachers() {
-    return this.wrapper.get(".teacher");
+  directors() {
+    return this.wrapper.get(".director");
   }
 }
 
