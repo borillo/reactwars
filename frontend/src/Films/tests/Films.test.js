@@ -18,19 +18,19 @@ describe("Films", () => {
     page = new FilmsPageObject(about);
   });
 
-  test("should be listed", async () => {
+  test("should be listed", () => {
     let films = page.obtainFilms();
 
     expect(films).toHaveLength(NUMBER_OF_FILMS);
   });
 
-  test("should show episode title", async () => {
+  test("should show episode title", () => {
     const thePhantomMenace = page.obtainFilmWithTitle("The Phantom Menace");
 
     expect(thePhantomMenace).toBeDefined();
   });
 
-  test("should be ordered by episode number", async () => {
+  test("should be ordered by episode number", () => {
     let first = page.obtainFirstEpisode();
     let last = page.obtainLastEpisode();
 
@@ -38,7 +38,7 @@ describe("Films", () => {
     expect(last).toEqual(`Episode ${NUMBER_OF_FILMS}`);
   });
 
-  test("should match snapshot", async () => {
+  test("should match snapshot", () => {
     expect(page.retrieveContainer()).toMatchSnapshot();
   });
 });
