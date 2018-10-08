@@ -21,7 +21,7 @@ describe("Films", () => {
   test("should be listed", async () => {
     let films = page.obtainFilms();
 
-    expect(films).toEqual(NUMBER_OF_FILMS);
+    expect(films).toHaveLength(NUMBER_OF_FILMS);
   });
 
   test("should show episode title", async () => {
