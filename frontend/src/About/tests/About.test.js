@@ -1,15 +1,21 @@
 jest.mock("../AboutRepository");
 
-import componentDom from "./dom/init";
+import React from "react";
+import { render } from "react-testing-library";
+
+import { build } from "../../config";
+
+import About from "../index";
 import AboutPageObject from "../AboutPageObject";
 
-const NUMBER_OF_TEACHERS = 2;
+const NUMBER_OF_DIRECTORS = 5;
 
 describe("About", () => {
   let page;
 
   beforeEach(() => {
-    page = new AboutPageObject(componentDom);
+    const about = render(build(<About />));
+    page = new AboutPageObject(about);
   });
 
   test("should present wellcome information", () => {
@@ -18,13 +24,13 @@ describe("About", () => {
     expect(title).toBeDefined();
   });
 
-  test("should show associated teachers", () => {
-    const teachers = page.obtainTeachers();
+  test("should show associated directors", () => {
+    const directors = page.obtainDirectors();
 
-    expect(teachers).toHaveLength(NUMBER_OF_TEACHERS);
+    expect(directors).toHaveLength(NUMBER_OF_DIRECTORS);
   });
 
   test("should match snapshot", async () => {
-    expect(page.retrieveDom()).toMatchSnapshot();
+    expect(page.retrieveContainer()).toMatchSnapshot();
   });
 });
