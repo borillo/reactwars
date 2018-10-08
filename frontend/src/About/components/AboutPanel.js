@@ -21,7 +21,7 @@ class AboutPanel extends Component {
 
     return (
       <div className="panel-about">
-        <h1 data-testid="panel-about-title">This is ReactWars app!!</h1>
+        <h1>This is ReactWars app!!</h1>
 
         <p>A hello world application build on top of React v16.</p>
 

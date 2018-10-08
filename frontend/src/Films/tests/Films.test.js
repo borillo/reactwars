@@ -19,26 +19,26 @@ describe("Films", () => {
   });
 
   test("should be listed", async () => {
-    let filmList = page.obtainFilms();
+    let films = page.obtainFilms();
 
-    expect(filmList).toHaveLength(NUMBER_OF_FILMS);
+    expect(films).toEqual(NUMBER_OF_FILMS);
   });
 
   test("should show episode title", async () => {
-    const filmsTitles = page.obtainFilmsTitles();
+    const thePhantomMenace = page.obtainFilmWithTitle("The Phantom Menace");
 
-    expect(filmsTitles).toHaveLength(NUMBER_OF_FILMS);
+    expect(thePhantomMenace).toBeDefined();
   });
 
   test("should be ordered by episode number", async () => {
-    let episodes = page.obtainFilmsEpisodes();
+    let first = page.obtainFirstEpisode();
+    let last = page.obtainLastEpisode();
 
-    episodes.forEach((episode, index) => {
-      expect(episode).toEqual(`Episode ${index + 1}`);
-    });
+    expect(first).toEqual("Episode 1");
+    expect(last).toEqual(`Episode ${NUMBER_OF_FILMS}`);
   });
 
   test("should match snapshot", async () => {
-    expect(page.retrieveDom()).toMatchSnapshot();
+    expect(page.retrieveContainer()).toMatchSnapshot();
   });
 });

@@ -10,7 +10,6 @@ exports[`Films should match snapshot 1`] = `
     </h1>
     <div
       class="films"
-      data-testid="films"
     >
       <div
         class="films-list"

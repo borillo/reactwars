@@ -1,27 +1,28 @@
 export default class FilmsPageObject {
-  constructor({ getByTestId, container, debug }) {
-    this.getByTestId = getByTestId;
+  constructor({ getByText, queryAllByText, container }) {
+    this.getByText = getByText;
+    this.queryAllByText = queryAllByText;
     this.container = container;
-    this.debug = debug;
   }
 
-  retrieveDom() {
+  retrieveContainer() {
     return this.container;
   }
 
   obtainFilms() {
-    return this.getByTestId("films").querySelectorAll(".film");
+    return this.queryAllByText(/Episode/).length;
   }
 
-  obtainFilmsTitles() {
-    const nodeTitles = this.container.querySelectorAll(".title");
-
-    return [...nodeTitles].map(node => node.textContent);
+  obtainFilmWithTitle(title) {
+    return this.getByText(title);
   }
 
-  obtainFilmsEpisodes() {
-    const nodeEpisodes = this.container.querySelectorAll(".episode");
+  obtainFirstEpisode() {
+    return this.queryAllByText(/Episode/)[0].textContent;
+  }
 
-    return [...nodeEpisodes].map(node => node.textContent);
+  obtainLastEpisode() {
+    const episodes = this.queryAllByText(/Episode/);
+    return episodes[episodes.length - 1].textContent;
   }
 }

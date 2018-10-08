@@ -28,7 +28,7 @@ const ScrollToTop = () => {
 
 const Films = ({ data: films, voteEpisode, match, location }) => {
   return (
-    <div className="films" data-testid="films">
+    <div className="films">
       <div className="films-list">
         {films.map(film => (
           <Film

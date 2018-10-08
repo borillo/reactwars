@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const Directors = ({ data: directors }) => {
   return (
-    <ul className="directors" data-testid="directors">
+    <ul className="directors">
       {directors.map(director => {
         return (
           <li key={director} className="director">

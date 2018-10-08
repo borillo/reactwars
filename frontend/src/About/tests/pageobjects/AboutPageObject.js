@@ -1,14 +1,14 @@
 export default class AboutPageObject {
-  constructor({ getByTestId }) {
-    this.getByTestId = getByTestId;
+  constructor({ getByText }) {
+    this.getByText = getByText;
   }
 
-  obtainTitle() {
-    return this.getByTestId("panel-about-title");
+  obtainWithTitle(title) {
+    return this.getByText(title);
   }
 
-  obtainDirectors() {
-    return this.getByTestId("directors").children;
+  obtainDirectorWithName(name) {
+    return this.getByText(name);
   }
 
   retrieveContainer() {

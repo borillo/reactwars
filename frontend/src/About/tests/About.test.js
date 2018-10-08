@@ -11,26 +11,26 @@ import AboutPageObject from "./pageobjects/AboutPageObject";
 const NUMBER_OF_DIRECTORS = 5;
 
 describe("About", () => {
-  let page;
+  let page, about;
 
   beforeEach(() => {
-    const about = render(build(<About />));
+    about = render(build(<About />));
     page = new AboutPageObject(about);
   });
 
   test("should present wellcome information", () => {
-    const title = page.obtainTitle();
+    const title = page.obtainWithTitle("This is ReactWars app!!");
 
     expect(title).toBeDefined();
   });
 
   test("should show associated directors", () => {
-    const directors = page.obtainDirectors();
+    const georgeLucas = page.obtainDirectorWithName("George Lucas");
 
-    expect(directors).toHaveLength(NUMBER_OF_DIRECTORS);
+    expect(georgeLucas).toBeDefined();
   });
 
-  test("should match snapshot", async () => {
+  test("should match snapshot", () => {
     expect(page.retrieveContainer()).toMatchSnapshot();
   });
 });
