@@ -11,7 +11,7 @@ class FilmsPageObject {
   }
 
   title() {
-    return this.wrapper.get(".films-panel h1");
+    return this.wrapper.get(".films-panel h1").first();
   }
 
   films() {
