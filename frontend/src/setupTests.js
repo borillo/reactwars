@@ -2,10 +2,11 @@ import expect from "expect";
 
 expect.extend({
   toShowEpisodesInOrder(page) {
-    let first = page.obtainFirstEpisode();
-    let last = page.obtainLastEpisode();
+    const first = page.obtainFirstEpisode();
+    const last = page.obtainLastEpisode();
+    const numberOfFilms = page.numberOfFilms();
 
-    if (first === "Episode 1" && last === "Episode 8") {
+    if (first === "Episode 1" && last === `Episode ${numberOfFilms}`) {
       return { pass: true };
     }
 

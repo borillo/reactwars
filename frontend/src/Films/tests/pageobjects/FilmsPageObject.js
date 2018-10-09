@@ -13,6 +13,10 @@ export default class FilmsPageObject {
     return this.queryAllByText(/Episode/);
   }
 
+  numberOfFilms() {
+    return this.obtainFilms().length;
+  }
+
   obtainFilmWithTitle(title) {
     return this.getByText(title);
   }
