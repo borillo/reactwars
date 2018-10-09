@@ -1,6 +1,6 @@
 import FilmsPageObject from "../../pageobjects/FilmsPageObject";
 
-describe.only("Non official Films", () => {
+describe("Non official Films", () => {
   let page;
 
   beforeEach(() => {
