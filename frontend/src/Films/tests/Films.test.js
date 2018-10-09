@@ -1,7 +1,5 @@
 const NUMBER_OF_FILMS = 8;
 
-afterEach(cleanup);
-
 describe("Films", () => {
   beforeEach(() => {});
 
