@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 
-import { loadFilmsAction, voteEpisodeAction } from "./actions/creators";
+import {
+  loadFilmsAction,
+  voteEpisodeAction,
+  registerEpisodeAction
+} from "./actions/creators";
 
 import FilmsPanel from "./components/FilmsPanel";
 
@@ -10,7 +14,7 @@ const mapStateToProps = ({ films: data }) => {
     votes: data[`votes-${film.episode}`]
   }));
 
-  return { data: filmsWithVotes };
+  return { films: filmsWithVotes, unofficialFilms: data.unofficialFilms };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -21,6 +25,10 @@ const mapDispatchToProps = dispatch => {
 
     voteEpisode: episode => {
       dispatch(voteEpisodeAction(episode));
+    },
+
+    registerEpisode: film => {
+      dispatch(registerEpisodeAction(film));
     }
   };
 };

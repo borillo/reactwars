@@ -45,6 +45,20 @@ class FilmsPageObject {
       .find(".vote")
       .click();
   }
+
+  registerFilm(film) {
+    return this.wrapper
+      .get(".new-film-title")
+      .type(film.title)
+      .get(".new-film-director")
+      .type(film.director)
+      .get(".new-film-year")
+      .type(film.year)
+      .get(".new-film-poster")
+      .type(film.poster)
+      .get(".save-new-film")
+      .click();
+  }
 }
 
 export default FilmsPageObject;

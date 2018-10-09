@@ -1,7 +1,13 @@
-import { FILMS_LOAD_START, FILMS_LOAD_END, VOTE_EPISODE } from "./types";
+import {
+  FILMS_LOAD_START,
+  FILMS_LOAD_END,
+  VOTE_EPISODE,
+  REGISTER_EPISODE
+} from "./types";
 
 const defaultState = {
-  films: []
+  films: [],
+  unofficialFilms: []
 };
 
 export default (state = defaultState, action) => {
@@ -15,6 +21,11 @@ export default (state = defaultState, action) => {
         ...state,
         [`votes-${action.payload}`]:
           parseInt(state[`votes-${action.payload}`] || 0, 10) + 1
+      };
+    case REGISTER_EPISODE:
+      return {
+        ...state,
+        unofficialFilms: [...state.unofficialFilms, action.payload]
       };
     default:
       return state;

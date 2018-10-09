@@ -1,3 +1,4 @@
 export const FILMS_LOAD_START = "FILMS_LOAD_START";
 export const FILMS_LOAD_END = "FILMS_LOAD_END";
 export const VOTE_EPISODE = "VOTE_EPISODE";
+export const REGISTER_EPISODE = "REGISTER_EPISODE";

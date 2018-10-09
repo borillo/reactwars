@@ -5,3 +5,7 @@
 .films .films-list {
   min-width: 27rem;
 }
+
+.films-panel input {
+  width: 25rem;
+}
