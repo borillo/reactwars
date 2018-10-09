@@ -14,7 +14,7 @@ describe("Non official Films", () => {
       director: "Gareth Edwards",
       year: 2016,
       poster:
-        "https://en.wikipedia.org/wiki/File:Rogue_One,_A_Star_Wars_Story_poster.png"
+        "https://upload.wikimedia.org/wikipedia/en/d/d4/Rogue_One%2C_A_Star_Wars_Story_poster.png"
     });
 
     page.films().contains("Rogue One: A Star Wars Story");
