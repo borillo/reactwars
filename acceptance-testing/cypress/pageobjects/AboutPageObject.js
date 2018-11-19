@@ -2,8 +2,10 @@ class AboutPageObject {
   constructor(wrapper) {
     this.wrapper = wrapper;
 
-    this.wrapper.server();
-    this.wrapper.route("/api/directors", "fixture:directors");
+    /* Mock Requests */
+
+    //this.wrapper.server();
+    //this.wrapper.route("/api/directors", "fixture:directors");
   }
 
   open() {

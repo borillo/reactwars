@@ -9,8 +9,6 @@ context("Directors", () => {
   });
 
   it("should show the director list", () => {
-    const directors = page.directors();
-
-    directors.should("have.length", 2);
+    page.directors().should("have.length", 5);
   });
 });
