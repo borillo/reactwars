@@ -1,5 +1,9 @@
 import expect from "expect";
 
+import { cleanup } from "react-testing-library";
+
+afterEach(cleanup);
+
 expect.extend({
   toShowEpisodesInOrder(page) {
     const first = page.obtainFirstEpisode();
@@ -11,7 +15,7 @@ expect.extend({
     }
 
     return {
-      message: () => `expected ${received} to be ordered`,
+      message: () => `film list should be ordered`,
       pass: false
     };
   }

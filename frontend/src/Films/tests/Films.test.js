@@ -1,23 +1,20 @@
 jest.mock("../repositories/FilmsRepository");
 
 import React from "react";
-import { render, cleanup } from "react-testing-library";
+
+import { render } from "../../App/config";
 
 import Films from "../index";
 import FilmsPageObject from "./pageobjects/FilmsPageObject";
 
-import { build } from "../../App/config";
-
 const NUMBER_OF_FILMS = 8;
-
-afterEach(cleanup);
 
 describe("Films", () => {
   let page;
 
   beforeEach(() => {
-    const about = render(build(<Films />));
-    page = new FilmsPageObject(about);
+    const films = render(<Films />);
+    page = new FilmsPageObject(films);
   });
 
   test("should be listed", () => {

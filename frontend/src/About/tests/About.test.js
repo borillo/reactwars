@@ -1,20 +1,17 @@
 jest.mock("../repositories/AboutRepository");
 
 import React from "react";
-import { render } from "react-testing-library";
 
-import { build } from "../../App/config";
+import { render } from "../../App/config";
 
 import About from "../index";
 import AboutPageObject from "./pageobjects/AboutPageObject";
 
-const NUMBER_OF_DIRECTORS = 5;
-
 describe("About", () => {
-  let page, about;
+  let page;
 
   beforeEach(() => {
-    about = render(build(<About />));
+    const about = render(<About />);
     page = new AboutPageObject(about);
   });
 
