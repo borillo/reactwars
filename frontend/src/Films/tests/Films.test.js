@@ -26,17 +26,7 @@ describe("Films", () => {
     expect(films).toHaveLength(NUMBER_OF_FILMS);
   });
 
-  test("should show episode title", () => {
-    const thePhantomMenace = page.obtainFilmWithTitle("The Phantom Menace");
-
-    expect(thePhantomMenace).toBeDefined();
-  });
-
   test("should be ordered by episode number", () => {
     expect(page).toShowEpisodesInOrder();
-  });
-
-  test("should match snapshot", () => {
-    expect(page.retrieveContainer()).toMatchSnapshot();
   });
 });

@@ -1,3 +1,51 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`About should match snapshot 1`] = `undefined`;
+exports[`About should match snapshot 1`] = `
+<div>
+  <div
+    class="panel-about"
+  >
+    <h1>
+      This is ReactWars app!!
+    </h1>
+    <p>
+      A hello world application build on top of React v16.
+    </p>
+    <h3>
+      Directors:
+    </h3>
+    <ul
+      class="directors"
+    >
+      <li
+        class="director"
+      >
+        George Lucas
+      </li>
+      <li
+        class="director"
+      >
+        Irvin Kershner
+      </li>
+      <li
+        class="director"
+      >
+        Richard Marquand
+      </li>
+      <li
+        class="director"
+      >
+        J. J. Abrams
+      </li>
+      <li
+        class="director"
+      >
+        Rian Johnson
+      </li>
+    </ul>
+    <button>
+      Feel the force!!
+    </button>
+  </div>
+</div>
+`;

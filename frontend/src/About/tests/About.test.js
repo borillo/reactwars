@@ -18,12 +18,6 @@ describe("About", () => {
     page = new AboutPageObject(about);
   });
 
-  test("should present wellcome information", () => {
-    const title = page.obtainWithTitle("This is ReactWars app!!");
-
-    expect(title).toBeDefined();
-  });
-
   test("should show associated directors", () => {
     const georgeLucas = page.obtainDirectorWithName("George Lucas");
 
@@ -31,6 +25,7 @@ describe("About", () => {
   });
 
   test("should match snapshot", () => {
-    expect(page.retrieveContainer()).toMatchSnapshot();
+    const container = page.retrieveContainer();
+    expect(container).toMatchSnapshot();
   });
 });

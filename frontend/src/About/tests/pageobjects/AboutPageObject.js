@@ -1,10 +1,7 @@
 export default class AboutPageObject {
-  constructor({ getByText }) {
+  constructor({ getByText, container }) {
     this.getByText = getByText;
-  }
-
-  obtainWithTitle(title) {
-    return this.getByText(title);
+    this.container = container;
   }
 
   obtainDirectorWithName(name) {

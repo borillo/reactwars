@@ -1,12 +1,6 @@
 export default class FilmsPageObject {
-  constructor({ getByText, queryAllByText, container }) {
-    this.getByText = getByText;
+  constructor({ queryAllByText }) {
     this.queryAllByText = queryAllByText;
-    this.container = container;
-  }
-
-  retrieveContainer() {
-    return this.container;
   }
 
   obtainFilms() {
@@ -15,10 +9,6 @@ export default class FilmsPageObject {
 
   numberOfFilms() {
     return this.obtainFilms().length;
-  }
-
-  obtainFilmWithTitle(title) {
-    return this.getByText(title);
   }
 
   obtainFirstEpisode() {
