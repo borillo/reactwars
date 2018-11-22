@@ -1,18 +1,18 @@
 class FilmsPageObject {
-  constructor(wrapper) {
-    this.wrapper = wrapper;
+  constructor(browser) {
+    this.browser = browser;
   }
 
   open() {
-    this.wrapper.visit("/films");
+    this.browser.visit("/films");
   }
 
   films() {
-    return this.wrapper.get(".film");
+    return this.browser.get(".film");
   }
 
   registerFilm(film) {
-    return this.wrapper
+    return this.browser
       .get(".new-film-title")
       .type(film.title)
       .get(".new-film-director")
