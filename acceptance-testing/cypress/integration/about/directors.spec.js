@@ -8,6 +8,10 @@ context("Directors", () => {
     page.open();
   });
 
+  it("should include a greeting text", () => {
+    page.greetingText().contains("This is ReactWars app!!");
+  });
+
   it("should show the director list", () => {
     page.directors().should("have.length", 5);
   });

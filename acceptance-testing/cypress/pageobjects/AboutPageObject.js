@@ -1,19 +1,18 @@
 class AboutPageObject {
-  constructor(wrapper) {
-    this.wrapper = wrapper;
-
-    /* Mock Requests */
-
-    //this.wrapper.server();
-    //this.wrapper.route("/api/directors", "fixture:directors");
+  constructor(browser) {
+    this.browser = browser;
   }
 
   open() {
-    this.wrapper.visit("/about");
+    this.browser.visit("/about");
+  }
+
+  greetingText() {
+    return this.browser.get(".panel-about h1");
   }
 
   directors() {
-    return this.wrapper.get(".director");
+    return this.browser.get(".director");
   }
 }
 
